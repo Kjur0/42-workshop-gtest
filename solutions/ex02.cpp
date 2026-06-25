@@ -13,22 +13,22 @@ TEST(ex02, integers) {
 	// Complete the TEST with appropriate `ASSERT_*`
 
 	// function `int_equal` should always return a value that is equal to the input value
-	ASSERT_(int_equal(42), 42);
+	ASSERT_EQ(int_equal(42), 42);
 
 	// function `char_not_equal` should always return a value that is not equal to the input value
-	ASSERT_(char_not_equal('a'), 'a');
+	ASSERT_NE(char_not_equal('a'), 'a');
 
 	// function `long_greater` should always return a value that is greater than the input value
-	ASSERT_(long_greater(42), 42L);
+	ASSERT_GT(long_greater(42), 42L);
 
 	// function `float_less_or_equal` should always return a value that is less than or equal to the input value
-	ASSERT_(int_less_or_equal(42), 42.);
+	ASSERT_LE(int_less_or_equal(42), 42);
 
 	// function `double_greater_or_equal` should always return a value that is greater than or equal to the input value
-	ASSERT_(int_greater_or_equal(42), 42);
+	ASSERT_GE(int_greater_or_equal(42), 42);
 
 	// function `long_long_less` should always return a value that is less than the input value
-	ASSERT_(long_long_less(42), 42ll);
+	ASSERT_LT(long_long_less(42), 42ll);
 }
 
 TEST(ex02, booleans) {
@@ -38,10 +38,10 @@ TEST(ex02, booleans) {
 	// Complete the TEST with appropriate `ASSERT_*`
 
 	// function is_even should return `true` if the input value is even, and `false` otherwise
-	ASSERT_(is_even(42));
+	ASSERT_TRUE(is_even(42));
 
 	// function is_odd should return `true` if the input value is odd, and `false` otherwise
-	ASSERT_(is_odd(42));
+	ASSERT_FALSE(is_odd(42));
 }
 
 TEST(ex02, pointers) {
@@ -59,7 +59,7 @@ TEST(ex02, pointers) {
 
 	// function `give_me_a_pointer` should always return a pointer to an integer with a value of `42`
 	int *ptr = give_me_a_pointer();
-	ASSERT_//???
+	ASSERT_TRUE(ptr); // check if the pointer is not `nullptr`
 	ASSERT_EQ(*ptr, 42);
 
 	// ALWAYS remember to FREE any memory allocated either before or during the test
@@ -68,7 +68,7 @@ TEST(ex02, pointers) {
 	// remember any C code is able to be used in C++ code, all C code is automatically C++ code
 
 	// function `dont_give_me_a_pointer` should always return a `nullptr`
-	ASSERT_//???
+	ASSERT_FALSE(dont_give_me_a_pointer());
 }
 
 TEST(ex02, strings) {
@@ -78,16 +78,16 @@ TEST(ex02, strings) {
 	// Complete the TEST with appropriate `ASSERT_STR*`
 
 	// function `ping` should always return a string that is equal to "pong"
-	ASSERT_STR(ping(), "pong");
+	ASSERT_STREQ(ping(), "pong");
 
 	// function `pong` should never return a string that is equal to "ping"
-	ASSERT_STR(pong(), "ping");
+	ASSERT_STRNE(pong(), "ping");
 
 	// function `hello` should always return a string that is equal to "world" (but it may have a different case)
-	ASSERT_STR(hello(), "world");
+	ASSERT_STRCASEEQ(hello(), "world");
 
 	// function `world` should never return a string that is equal to "hello" (but it may have a different case)
-	ASSERT_STR(world(), "hello");
+	ASSERT_STRCASENE(world(), "hello");
 }
 
 
@@ -99,13 +99,13 @@ TEST(ex02, floats) {
 	// Complete the TEST with appropriate `ASSERT_*`
 
 	// function `float_equal` should always return a value that is equal to the input value
-	ASSERT_(float_equal(42.0f), 42.0f);
+	ASSERT_FLOAT_EQ(float_equal(42.0f), 42.0f);
 
 	// function `double_equal` should always return a value that is equal to the input value
-	ASSERT_(double_equal(42.0), 42.0);
+	ASSERT_DOUBLE_EQ(double_equal(42.0), 42.0);
 
 	// function `float_near` should always return a value that is no more than 0.1 away from the input value
-	ASSERT_(float_near(42.0f), 42.0f, 0.1f);
+	ASSERT_NEAR(float_near(42.0f), 42.0f, 0.1f);
 }
 
 

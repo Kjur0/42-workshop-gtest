@@ -34,33 +34,24 @@ int* give_me_a_pointer() {
 int* dont_give_me_a_pointer() {
 	return nullptr;
 }
-char* ping() {
+const char* ping() {
 	return "pong";
 }
-char* pong() {
+const char* pong() {
 	return "PONG";
 }
-char* hello() {
+const char* hello() {
 	return "wOrLd";
 }
-char* world() {
+const char* world() {
 	return "GreEtingS";
 }
 float float_equal(float value) {
 	return value;
 }
-double double_not_equal(double value) {
-	return value + 1.0;
+double double_equal(double value) {
+	return value;
 }
-float float_greater(float value) {
-	return value + 1.0f;
-}
-double double_less_or_equal(double value) {
-	return value - 1.0;
-}
-float float_greater_or_equal(float value) {
-	return value + 1.0f;
-}
-double double_less(double value) {
-	return value - 1.0;
+float float_near(float value) {
+	return value + 0.1f;
 }

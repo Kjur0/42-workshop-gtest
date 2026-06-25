@@ -26,4 +26,6 @@ out/
 ├── All the output files are in this folder (don't edit this folder)
 ft-libft/
 ├── The `libft` library is in this folder (don't edit this folder)
+solutions/
+├── All the solutions are in this folder (don't edit this folder)
 ```
