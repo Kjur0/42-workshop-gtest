@@ -70,7 +70,7 @@ while true; do
 		continue
 	fi
 
-	./"ex0$progress"
+	./out/"ex0$progress"
 
 	if [ $? -ne 0 ]; then
 		printf "\n${RED}You have failed the exercise. Please try again.${RESET}\n${BLUE}"
