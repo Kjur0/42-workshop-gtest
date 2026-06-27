@@ -68,7 +68,8 @@ TEST(ex02, pointers) {
 	// remember any C code is able to be used in C++ code, all C code is automatically C++ code
 
 	// function `dont_give_me_a_pointer` should always return a `nullptr`
-	ASSERT_FALSE(dont_give_me_a_pointer());
+	int *ptr2 = dont_give_me_a_pointer();
+	ASSERT_FALSE(ptr2);
 }
 
 TEST(ex02, strings) {
